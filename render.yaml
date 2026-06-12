@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: drruthnjoroge-prototype
+    env: node
+    plan: free
+    buildCommand: npm ci --prefix frontend && npm run build --prefix frontend && npm ci --prefix backend
+    startCommand: npm start --prefix backend
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_PHONE_NUMBER
+        sync: false
+      - key: TWILIO_WHATSAPP_SENDER_NUMBER
+        sync: false
+      - key: NOTIFICATION_RECIPIENT_PHONE_NUMBER
+        sync: false
+      - key: NOTIFICATION_RECIPIENT_WHATSAPP_NUMBER
+        sync: false

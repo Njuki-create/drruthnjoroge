@@ -1,13 +1,83 @@
+# Git Configuration - Ignore sensitive and temporary files
+
+# Dependencies
 node_modules/
-dist/
+yarn.lock
+
+# Environment variables (NEVER commit)
 .env
 .env.local
 .env.*.local
+backend/data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+*.sublime-project
+
+# Build outputs
+/dist/
+/build/
+/out/
 .angular/
-.cache/
-coverage/
+.ng/
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+
+# Testing
+/coverage/
+.nyc_output/
+
+# OS
+Thumbs.db
+.DS_Store
+*.pem
+
+# Runtime
+.next/
+.nuxt/
+dist
+.cache/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Compiled files
+*.class
+*.jar
+*.exe
+*.o
+*.so
+*.dll
+*.dylib
+*.deb
+*.rpm
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# IDE specific
+.vscode/settings.json
+.vscode/extensions.json
+.idea/
+*.iml
+
+# OS specific
 .DS_Store
 Thumbs.db

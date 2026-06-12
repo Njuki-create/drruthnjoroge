@@ -1,0 +1,362 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                   HOW TO RUN THE PROJECT - COMPLETE GUIDE                     ║
+║              Dr. Ruth Njoroge Plastic & Reconstructive Surgery                 ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📋 PREREQUISITES
+════════════════════════════════════════════════════════════════════════════════
+
+✓ Node.js installed (Check: node --version)
+✓ npm installed (Check: npm --version)
+✓ MongoDB (local or Atlas - see MongoDB Setup section)
+✓ Project folder: c:\Users\ELITEX21012G2\Desktop\SAM\drruthnjoroge
+
+
+🚀 QUICK START (3 Steps)
+════════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Open Terminal #1 (Backend Server)
+────────────────────────────────────────
+Copy and paste these commands:
+
+    cd c:\Users\ELITEX21012G2\Desktop\SAM\drruthnjoroge\backend
+    npm run dev
+
+Expected output:
+    🏥 Dr. Ruth Njoroge Medical Spa API
+    Server running on http://localhost:3000
+    Available endpoints:
+      POST   /api/appointments
+      GET    /api/admin/appointments
+      PATCH  /api/admin/appointments/:id
+      DELETE /api/admin/appointments/:id
+
+
+STEP 2: Open Terminal #2 (Frontend Server)
+───────────────────────────────────────────
+Copy and paste these commands:
+
+    cd c:\Users\ELITEX21012G2\Desktop\SAM\drruthnjoroge\frontend
+    npm start
+
+Expected output:
+    ✔ Compiled successfully.
+    ⠋ Generating browser application bundles...
+    * Your application is running here: http://localhost:4200
+
+
+STEP 3: Open Browser
+────────────────────
+Go to: http://localhost:4200
+
+You should see the Dr. Ruth Njoroge Plastic Surgery website!
+
+
+════════════════════════════════════════════════════════════════════════════════
+⚠️  MONGODB SETUP (REQUIRED FOR BOOKINGS)
+════════════════════════════════════════════════════════════════════════════════
+
+The website displays fine WITHOUT MongoDB, but bookings won't save.
+
+OPTION A: MongoDB Atlas (Cloud - RECOMMENDED)
+──────────────────────────────────────────
+
+1. Go to: https://www.mongodb.com/cloud/atlas
+2. Click "Try Free" or "Sign Up"
+3. Create account (no credit card required for free tier)
+4. Create a new project
+5. Create a M0 cluster (free tier)
+   - Click "Build a Database"
+   - Select M0 Sandbox (Free)
+   - Choose your region (closest to Kenya: Europe or Africa)
+   - Click "Create Cluster"
+6. Set up database access:
+   - Click "Database Access" in left menu
+   - Click "+ Add New Database User"
+   - Create username & password (example: admin / password123)
+   - Click "Add User"
+7. Get connection string:
+   - Click "Databases" in left menu
+   - Click "Connect" on your cluster
+   - Select "Connect your application"
+   - Copy the connection string (looks like):
+     mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
+8. Replace placeholders:
+   - username → your database username
+   - password → your database password
+9. Update backend/.env file:
+   
+   MONGODB_URI=mongodb+srv://admin_db_user:admin123@cluster0.xxxxx.mongodb.net/drruthnjoroge?retryWrites=true&w=majority
+   
+10. Restart backend server (backend will auto-reconnect)
+
+
+OPTION B: Local MongoDB (Windows)
+──────────────────────────────────
+
+1. Download MongoDB Community Edition:
+   https://www.mongodb.com/try/download/community
+
+2. Run installer:
+   - Default installation path: C:\Program Files\MongoDB\Server\<version>
+   - Recommended: Install as Windows Service (automatic startup)
+
+3. Verify MongoDB is running:
+   - Open Services (Win + R → services.msc)
+   - Find "MongoDB" or "mongod"
+   - Should show "Running"
+
+4. Backend will auto-connect to: mongodb://localhost:27017/drruthnjoroge
+
+
+════════════════════════════════════════════════════════════════════════════════
+📂 PROJECT STRUCTURE
+════════════════════════════════════════════════════════════════════════════════
+
+drruthnjoroge/
+├── backend/                          # Express.js API Server
+│   ├── server.js                    # Main server entry point
+│   ├── .env                         # Configuration (MongoDB URI, admin credentials)
+│   ├── package.json                 # Backend dependencies
+│   ├── models/
+│   │   └── Appointment.js           # MongoDB appointment schema
+│   ├── routes/
+│   │   ├── appointments.js          # POST /api/appointments
+│   │   └── admin.js                 # Admin API endpoints
+│   └── middleware/
+│       └── auth.js                  # JWT authentication
+│
+└── frontend/                         # Angular Application
+    ├── src/
+    │   ├── main.ts                  # Application bootstrap
+    │   ├── styles.scss              # Global theme (Navy/Gold)
+    │   └── app/
+    │       ├── app.module.ts        # Main Angular module
+    │       ├── app-routing.module.ts # Route configuration
+    │       ├── components/
+    │       │   ├── shared/
+    │       │   │   ├── navbar/      # Navigation bar
+    │       │   │   └── footer/      # Footer
+    │       │   └── pages/
+    │       │       ├── home/        # Home page
+    │       │       ├── about/       # Dr. Ruth Njoroge bio
+    │       │       ├── services/    # Surgical services
+    │       │       ├── contact/     # Contact information
+    │       │       ├── book-now/    # Appointment form
+    │       │       └── admin-dashboard/ # Admin panel
+    │       └── services/
+    │           └── appointment.service.ts # API communication
+    ├── package.json                 # Frontend dependencies
+    └── angular.json                 # Angular configuration
+
+
+════════════════════════════════════════════════════════════════════════════════
+🌐 AVAILABLE PAGES & ROUTES
+════════════════════════════════════════════════════════════════════════════════
+
+Patient-Facing Pages:
+  • http://localhost:4200/home              - Home page (hero section)
+  • http://localhost:4200/about             - About Dr. Ruth Njoroge
+  • http://localhost:4200/services          - Surgical services catalog
+  • http://localhost:4200/contact           - Contact & location
+  • http://localhost:4200/book-now          - Appointment booking form
+
+Admin Pages:
+  • http://localhost:4200/admin/dashboard   - Appointment management
+    
+    Login Credentials:
+    Email: admin@drruthnjoroge.com
+    Password: admin123
+
+
+════════════════════════════════════════════════════════════════════════════════
+🔌 API ENDPOINTS (Backend)
+════════════════════════════════════════════════════════════════════════════════
+
+All endpoints available at: http://localhost:3000
+
+1. POST /api/appointments
+   Description: Create a new appointment booking
+   Body: {
+     name: "John Doe",
+     email: "john@example.com",
+     phone: "+254712345678",
+     procedure: "Breast Augmentation",
+     appointmentDate: "2026-06-20T10:00:00",
+     consultationType: "First-time",
+     areasOfConcern: "Breast augmentation for confidence",
+     insuranceProvider: "None"
+   }
+
+2. GET /api/admin/appointments
+   Description: Get all appointments (admin only - requires JWT token)
+   Header: Authorization: Bearer <admin_token>
+   Response: Array of appointments with sorting/pagination
+
+3. PATCH /api/admin/appointments/:id
+   Description: Update appointment status
+   Body: { status: "Completed" }
+   Options: "Pending", "Completed", "Cancelled"
+
+4. DELETE /api/admin/appointments/:id
+   Description: Delete an appointment
+
+5. GET /health
+   Description: Health check endpoint
+   Response: { message: "Server is running" }
+
+
+════════════════════════════════════════════════════════════════════════════════
+🆙 SERVICES OFFERED (From Services Page)
+════════════════════════════════════════════════════════════════════════════════
+
+1. AESTHETIC / COSMETIC PROCEDURES
+   ├── Breast Procedures
+   │   ├── Breast Augmentation
+   │   ├── Breast Reduction
+   │   ├── Breast Lift (Mastopexy)
+   │   ├── Breast Reconstruction
+   │   └── Implant Revision Surgery
+   ├── Body Contouring
+   │   ├── Liposuction
+   │   ├── Tummy Tuck (Abdominoplasty)
+   │   ├── Arm Lift
+   │   ├── Thigh Lift
+   │   ├── Body Lift
+   │   ├── Brazilian Butt Lift (BBL)
+   │   └── Fat Transfer Procedures
+   └── Skin & Minimally Invasive
+       ├── Botox
+       ├── Dermal Fillers
+       ├── PRP Therapy
+       ├── Scar Revision
+       └── Skin Lesion Excision
+
+2. RECONSTRUCTIVE SURGERY
+   ├── Burn Reconstruction
+   ├── Skin Grafting
+   ├── Post-Trauma Reconstruction
+   ├── Scar Contracture Release
+   ├── Cancer Reconstruction
+   ├── Hand Reconstruction
+   ├── Congenital Deformity Correction
+   └── Wound Coverage Procedures
+
+3. SPECIALIZED SERVICES
+   ├── Keloid Treatment
+   ├── Chronic Wound Management
+   └── Post Weight-Loss Body Contouring
+
+4. HAIR RESTORATION SERVICES
+   ├── Hair Transplant Procedures
+   ├── PRP Hair Restoration
+   ├── Hairline Restoration
+   ├── Eyebrow Restoration
+   └── Hair Loss Assessment & Treatment
+
+
+════════════════════════════════════════════════════════════════════════════════
+🧪 TESTING THE APPLICATION
+════════════════════════════════════════════════════════════════════════════════
+
+1. Test Frontend Pages:
+   ✓ Visit http://localhost:4200
+   ✓ Click through all navigation menu items
+   ✓ Verify all pages load correctly
+   ✓ Check responsive design (resize browser window)
+
+2. Test Booking Form:
+   ✓ Go to http://localhost:4200/book-now
+   ✓ Fill out the form with test data
+   ✓ Click "Schedule Consultation"
+   ✓ Should see confirmation message (if MongoDB connected)
+   ✓ Check admin dashboard to verify booking was saved
+
+3. Test Admin Dashboard:
+   ✓ Go to http://localhost:4200/admin/dashboard
+   ✓ Login with: admin@drruthnjoroge.com / admin123
+   ✓ View all bookings in data table
+   ✓ Test sorting by clicking column headers
+   ✓ Test pagination controls
+   ✓ Test "Mark as Completed" button
+   ✓ Test "Delete" button
+
+
+════════════════════════════════════════════════════════════════════════════════
+🛠️  COMMON COMMANDS
+════════════════════════════════════════════════════════════════════════════════
+
+Backend:
+  npm run dev              # Start with auto-reload (nodemon)
+  npm run build            # Build for production
+  npm test                 # Run tests (if configured)
+
+Frontend:
+  npm start                # Start dev server (opens browser auto)
+  npm run build            # Build for production
+  npm test                 # Run unit tests
+  npm run lint             # Check code style
+  ng serve --port 4300    # Run on different port
+
+
+════════════════════════════════════════════════════════════════════════════════
+🆘 TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════════════
+
+Problem: "Cannot find module" error
+Solution: Run npm install in the folder (backend or frontend)
+
+Problem: Port already in use (3000 or 4200)
+Solution: Kill the process or use different port:
+  ng serve --port 4300
+
+Problem: MongoDB connection refused
+Solution: 
+  1. Check if MongoDB is running (local or Atlas)
+  2. Verify .env file has correct MONGODB_URI
+  3. For Atlas: Ensure IP whitelist includes your IP (0.0.0.0/0 for testing)
+
+Problem: CORS errors when booking
+Solution: Backend CORS is configured to allow localhost:4200
+  If using different port, update backend/server.js
+
+Problem: Admin login fails
+Solution: Check .env file has correct:
+  ADMIN_EMAIL=admin@drruthnjoroge.com
+  ADMIN_PASSWORD=admin123
+
+
+════════════════════════════════════════════════════════════════════════════════
+🌍 ACCESSING FROM OTHER COMPUTERS
+════════════════════════════════════════════════════════════════════════════════
+
+Local Network (Same Wi-Fi):
+1. Find your computer's IP:
+   Command: ipconfig
+   Look for "IPv4 Address" (e.g., 192.168.x.x)
+
+2. Access from other computer:
+   Frontend: http://192.168.x.x:4200
+   Backend: http://192.168.x.x:3000
+
+3. Update backend CORS if needed:
+   Edit backend/server.js line with cors configuration
+
+
+════════════════════════════════════════════════════════════════════════════════
+📝 NOTES
+════════════════════════════════════════════════════════════════════════════════
+
+• Keep both terminal windows open while developing
+• Changes to frontend files auto-reload (nodemon watches)
+• Changes to backend files auto-restart server (ng serve)
+• Press Ctrl+C in terminal to stop server
+• Browser dev tools: F12 (check console for errors)
+• Backend logs show all API requests
+
+
+════════════════════════════════════════════════════════════════════════════════
+✨ YOU'RE READY TO GO!
+════════════════════════════════════════════════════════════════════════════════
+
+Follow the 3 Quick Start steps above and visit http://localhost:4200 🎉
