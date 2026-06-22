@@ -1,31 +1,119 @@
-/* Plastic & Reconstructive Surgery Practice - Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 
-* {
+:root {
+  --w: #fbfaf8;
+  --off: #f4efeb;
+  --ink: #fbfaf8;
+  --plum: #4b1732;
+  --plum-2: #5d2440;
+  --plum-3: #301322;
+  --magenta: #5b1835;
+  --magenta-l: #7d3652;
+  --blush: #eadad4;
+  --rose: var(--magenta-l);
+  --rose-l: var(--blush);
+  --smoke: #8d8a89;
+  --graphite: #353332;
+  --slate: #4b4648;
+  --slate-m: #746e70;
+  --char: #231d21;
+  --bdr: rgba(226, 177, 194, 0.28);
+  --bdr-r: rgba(198, 83, 135, 0.28);
+  --shadow: 0 24px 70px rgba(62, 36, 48, 0.12);
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fb 100%);
-  color: #1a1a1a;
+html,
+body {
+  min-height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  padding: 0;
+  background:
+    linear-gradient(180deg, #fff 0, var(--w) 160px, var(--off) 100%);
+  color: var(--char);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
   overflow-x: hidden;
 }
 
-img, iframe {
+img,
+iframe {
   max-width: 100%;
 }
 
 main {
   min-width: 0;
+  background: var(--w);
+}
+
+.about-container,
+.services-container,
+.contact-container,
+.book-container,
+.policy-container {
+  background: var(--w);
+}
+
+.page-hero,
+.services-header,
+.contact-header,
+.book-header,
+.policy-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(91, 24, 53, 0.05), transparent 46%),
+    var(--w) !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(75, 23, 50, 0.1) !important;
+  box-shadow: none;
+  padding-left: clamp(20px, 5vw, 54px) !important;
+  padding-right: clamp(20px, 5vw, 54px) !important;
+}
+
+.page-hero::after,
+.services-header::after,
+.contact-header::after,
+.book-header::after,
+.policy-header::after {
+  content: none;
+}
+
+.page-hero h1,
+.services-header h1,
+.contact-header h1,
+.book-header h1,
+.policy-header h1 {
+  color: var(--ink) !important;
+  color: var(--plum) !important;
+}
+
+.page-hero p:not(.eyebrow),
+.services-header p:not(.eyebrow),
+.contact-header p:not(.eyebrow),
+.book-header p:not(.eyebrow),
+.policy-header p:not(.eyebrow) {
+  color: var(--slate-m) !important;
+}
+
+.page-hero .eyebrow,
+.services-header .eyebrow,
+.contact-header .eyebrow,
+.book-header .eyebrow,
+.policy-header .eyebrow {
+  color: var(--magenta) !important;
 }
 
 body,
@@ -46,7 +134,30 @@ span {
   overflow-wrap: break-word;
 }
 
-button, input, textarea, select {
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: var(--char);
+  letter-spacing: 0;
+}
+
+p,
+li {
+  line-height: 1.78;
+  color: var(--slate-m);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -56,8 +167,10 @@ button, input, textarea, select {
 .mat-mdc-outlined-button {
   max-width: 100%;
   min-height: 44px;
-  white-space: normal;
   height: auto;
+  border-radius: 4px !important;
+  letter-spacing: 0.04em;
+  white-space: normal;
 }
 
 .mat-mdc-button .mdc-button__label,
@@ -75,15 +188,47 @@ button, input, textarea, select {
   text-align: center;
 }
 
-.mat-mdc-button .mat-icon,
-.mat-mdc-raised-button .mat-icon,
-.mat-mdc-unelevated-button .mat-icon,
-.mat-mdc-outlined-button .mat-icon {
-  flex: 0 0 auto;
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button {
+  box-shadow: none !important;
+}
+
+.mat-mdc-raised-button:not(:disabled),
+.mat-mdc-unelevated-button:not(:disabled),
+.mat-mdc-raised-button.mat-accent:not(:disabled),
+.mat-mdc-raised-button.mat-primary:not(:disabled) {
+  background: var(--magenta) !important;
+  color: var(--w) !important;
+}
+
+.mat-mdc-raised-button:hover:not(:disabled),
+.mat-mdc-unelevated-button:hover:not(:disabled) {
+  background: var(--plum-3) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(36, 29, 34, 0.28) !important;
+}
+
+.mat-mdc-outlined-button,
+.mat-mdc-stroked-button {
+  border-color: var(--bdr) !important;
+  color: var(--plum) !important;
+}
+
+.mat-mdc-outlined-button:hover,
+.mat-mdc-stroked-button:hover {
+  border-color: var(--magenta-l) !important;
+  color: var(--magenta) !important;
 }
 
 .mat-mdc-icon-button {
   flex: 0 0 auto;
+}
+
+.mat-mdc-card {
+  border-radius: 8px !important;
+  border: 1px solid rgba(75, 23, 50, 0.1) !important;
+  box-shadow: var(--shadow) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
 }
 
 .mat-mdc-card,
@@ -101,115 +246,80 @@ button, input, textarea, select {
   width: 100%;
 }
 
+.mat-mdc-text-field-wrapper {
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+.mdc-notched-outline__leading,
+.mdc-notched-outline__notch,
+.mdc-notched-outline__trailing {
+  border-color: var(--bdr) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: var(--magenta) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label,
+.mat-mdc-select-arrow,
+.mat-datepicker-toggle {
+  color: var(--magenta) !important;
+}
+
 .mat-mdc-select-value {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Material Design Theme Override - Professional Surgical */
-.mat-toolbar {
-  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.15);
-  background: linear-gradient(135deg, #003366 0%, #001a33 100%);
-}
-
-.mat-card {
-  border-radius: 8px;
-  border-left: 4px solid #d4af37;
-  transition: all 0.3s ease;
-  background: white;
-}
-
-.mat-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 51, 102, 0.15);
-  transform: translateY(-4px);
-}
-
-.mat-form-field {
-  display: block;
-}
-
-.mat-raised-button {
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  background: #003366;
-  color: white;
-}
-
-.mat-raised-button:hover:not([disabled]) {
-  background: #004d99;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 51, 102, 0.25);
-}
-
-.mat-primary button {
-  background: #003366;
-  color: white;
-}
-
-/* Color Scheme - Professional Surgical Practice */
-.mat-primary {
-  color: #003366;
-}
-
-.mat-accent {
-  color: #d4af37;
-}
-
-/* Gold accent highlights */
-.accent-gold {
-  color: #d4af37;
-}
-
-.gold-bar {
-  border-left: 4px solid #d4af37;
-  padding-left: 16px;
-}
-
-/* Scrollbar Styling - Professional theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--plum-3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #003366;
+  background: var(--blush);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #004d99;
+  background: var(--magenta-l);
 }
 
-/* Responsive Design */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  opacity: 0;
+  animation: rise 0.8s ease forwards;
+}
+
+.r1 { animation-delay: 0.1s; }
+.r2 { animation-delay: 0.22s; }
+.r3 { animation-delay: 0.36s; }
+.r4 { animation-delay: 0.5s; }
+
 @media (max-width: 768px) {
   body {
     font-size: 14px;
   }
-  
-  .mat-toolbar {
-    padding: 8px 12px;
-  }
-  
-  .mat-raised-button {
-    padding: 8px 16px;
-    font-size: 12px;
-  }
 
-  .mat-mdc-card-content {
-    padding: 16px;
-  }
-
-  .mat-card:hover,
   .mat-mdc-card:hover,
-  .mat-raised-button:hover:not([disabled]),
-  .mat-mdc-raised-button:hover:not([disabled]) {
+  .mat-mdc-raised-button:hover:not(:disabled),
+  .mat-mdc-unelevated-button:hover:not(:disabled) {
     transform: none;
   }
 }
@@ -219,8 +329,6 @@ button, input, textarea, select {
   .mat-mdc-raised-button,
   .mat-mdc-unelevated-button,
   .mat-mdc-outlined-button {
-    white-space: normal;
-    line-height: 1.2;
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -233,29 +341,8 @@ button, input, textarea, select {
   }
 }
 
-/* Animations */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.mat-card {
-  animation: slideIn 0.3s ease;
-}
-
-/* Print Styles */
 @media print {
   body {
-    background: white;
-  }
-  
-  .mat-toolbar {
-    position: static;
+    background: #fff;
   }
 }

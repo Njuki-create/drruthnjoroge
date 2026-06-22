@@ -4,174 +4,249 @@ import { Component } from '@angular/core';
   selector: 'app-footer',
   template: `
     <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Dr. Ruth Njoroge, MD</h4>
-          <p>MBChB(UoN), MMed PRAS(UoN)</p>
-          <p class="credentials">Specializing in Aesthetic and Reconstructive Surgery</p>
-        </div>
-        <div class="footer-section">
-          <h4>Contact Information</h4>
-          <p>info&#64;drruthnjoroge.com</p>
-          <p>+254 713 906 800</p>
-          <div class="social-links">
-            <a
-              class="social-link whatsapp-link"
-              href="https://wa.me/254713906800"
-              target="_blank"
-              rel="noopener"
-              aria-label="Chat with Dr. Ruth Njoroge Medical Spa on WhatsApp">
-              <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                <path d="M16.01 3.2A12.72 12.72 0 0 0 3.28 15.9c0 2.24.59 4.42 1.72 6.34L3.2 28.8l6.72-1.76a12.65 12.65 0 0 0 6.09 1.55h.01A12.72 12.72 0 0 0 28.8 15.91 12.73 12.73 0 0 0 16.01 3.2Zm0 23.44h-.01c-1.87 0-3.7-.5-5.31-1.45l-.38-.23-3.99 1.05 1.06-3.88-.25-.4a10.58 10.58 0 0 1-1.62-5.63c0-5.84 4.76-10.59 10.62-10.59a10.55 10.55 0 0 1 10.57 10.6c0 5.84-4.76 10.59-10.69 10.59Zm5.82-7.93c-.32-.16-1.89-.93-2.18-1.04-.29-.1-.5-.16-.71.16-.21.31-.82 1.04-1.01 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.98-2.34-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65s1.14 3.08 1.3 3.29c.16.21 2.24 3.42 5.43 4.79.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.89-.77 2.16-1.52.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z"/>
-              </svg>
-              <span>WhatsApp</span>
-            </a>
-            <a
-              class="social-link tiktok-link"
-              href="https://www.tiktok.com/@drruthnjoroge"
-              target="_blank"
-              rel="noopener"
-              aria-label="Visit Dr. Ruth Njoroge Medical Spa on TikTok">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.05.86.14V9.42a6.42 6.42 0 0 0-.86-.06 6.4 6.4 0 0 0-5.38 9.86 6.4 6.4 0 0 0 11.28-4.13V8.56a8.44 8.44 0 0 0 4.65 1.39V6.75c-.14 0-.29-.01-.44-.06Z"/>
-              </svg>
-              <span>TikTok</span>
-            </a>
-          </div>
-          <p>Mombasa, Kenya</p>
-        </div>
-        <div class="footer-section">
-          <h4>Office Hours</h4>
-          <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-          <p>Saturday: 10:00 AM - 4:00 PM</p>
-          <p>Sunday & Public Holidays: Closed</p>
+      <div class="footer-brand">
+        <div class="footer-logo">Dr. Ruth <span>Njoroge</span></div>
+        <p>Plastic, reconstructive and aesthetic care in Mombasa, grounded in careful consultation, surgical judgement and discreet follow-up.</p>
+        <div class="social-links">
+          <a href="https://wa.me/254713906800" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3.2a8.6 8.6 0 0 0-7.4 13l-1 3.8 3.9-1a8.6 8.6 0 1 0 4.5-15.8Zm0 1.7a6.9 6.9 0 0 1 5.9 10.5 6.9 6.9 0 0 1-8.9 2.4l-.3-.2-2.3.6.6-2.2-.2-.3A6.9 6.9 0 0 1 12 4.9Zm-3 3.4c-.2 0-.6.1-.9.5-.3.3-.9 1-.9 2.3s.9 2.6 1.1 2.8c.1.2 1.8 2.9 4.5 3.8 2.2.8 2.7.4 3.2.4.5-.1 1.5-.7 1.7-1.3.2-.7.2-1.2.1-1.3-.1-.1-.2-.2-.5-.4l-1.7-.8c-.3-.1-.5-.1-.7.2-.2.3-.7.9-.8 1.1-.2.2-.3.2-.6.1-.3-.2-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.8c-.2-.4-.4-.4-.6-.4H9Z"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@drruthnjoroge" target="_blank" rel="noopener" aria-label="Visit TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15.4 3.5c.3 2.1 1.5 3.5 3.6 3.7v3a6.7 6.7 0 0 1-3.5-1.1v5.6c0 3-2.1 5.3-5.1 5.3-2.8 0-5-2.1-5-4.8 0-3.1 2.7-5.3 5.8-4.7v3.1c-1.4-.4-2.6.4-2.6 1.7 0 1 .8 1.8 1.9 1.8 1.2 0 1.9-.8 1.9-2.2V3.5h3Z"/>
+            </svg>
+          </a>
         </div>
       </div>
+
+      <div>
+        <p class="footer-heading">Practice</p>
+        <ul>
+          <li><a routerLink="/about">About Dr. Ruth</a></li>
+          <li><a routerLink="/services">Services</a></li>
+          <li><a routerLink="/book-now">Book Consultation</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-heading">Specialties</p>
+        <ul>
+          <li><a routerLink="/services">Aesthetic Surgery</a></li>
+          <li><a routerLink="/services">Reconstructive Surgery</a></li>
+          <li><a routerLink="/services">Skin Treatments</a></li>
+          <li><a routerLink="/services">Hair Restoration</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li><a href="tel:+254743174101">+254 743 174 101</a></li>
+          <li><a href="tel:+254713906800">+254 713 906 800</a></li>
+          <li><a href="mailto:info@drruthnjoroge.com">info&#64;drruthnjoroge.com</a></li>
+          <li><a routerLink="/contact">Mombasa Trade Centre</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-cta">
+        <p class="footer-heading">Consultation</p>
+        <h3>Private specialist guidance before any decision.</h3>
+        <p>Start with a confidential appointment request. The practice will help clarify suitability, preparation and next steps.</p>
+        <a class="footer-button" routerLink="/book-now">Book Consultation</a>
+      </div>
+
+      <div class="footer-note">
+        <span>Room 209, South Wing, Second Floor, Mombasa Trade Centre, Nkurumah Road.</span>
+        <span>Monday - Friday: 9:00 AM - 6:00 PM. Saturday: 10:00 AM - 4:00 PM.</span>
+      </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2026 Dr. Ruth Njoroge, MD | Plastic & Reconstructive Surgery. All rights reserved.</p>
-        <div class="footer-links">
-          <a routerLink="/privacy-policy">Privacy Policy</a> | <a routerLink="/terms-of-service">Terms of Service</a>
-        </div>
+        <span>&copy; 2026 Dr. Ruth Njoroge, MD. All rights reserved.</span>
+        <span><a routerLink="/privacy-policy">Privacy Policy</a> · <a routerLink="/terms-of-service">Terms of Service</a></span>
       </div>
     </footer>
   `,
   styles: [`
     .footer {
-      background: linear-gradient(135deg, #003366 0%, #001a33 100%);
-      color: white;
-      padding: clamp(32px, 6vw, 40px) 20px;
-      margin-top: clamp(36px, 6vw, 60px);
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
+      background:
+        linear-gradient(135deg, rgba(139, 15, 85, 0.22), transparent 34rem),
+        var(--plum-3);
+      color: rgba(250, 250, 248, 0.5);
+      padding: 64px 48px 36px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-      gap: 30px;
-      margin-bottom: 20px;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 44px;
+      margin-top: 0;
+    }
+    .footer-brand {
       min-width: 0;
     }
-    .footer-section {
-      min-width: 0;
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      color: var(--ink);
+      margin-bottom: 12px;
+      text-transform: uppercase;
     }
-    .footer-section h4 {
-      margin-bottom: 10px;
-      font-size: 16px;
-      color: #d4af37;
+    .footer-logo span {
+      color: var(--blush);
     }
-    .footer-section p {
-      margin: 5px 0;
-      opacity: 0.9;
-      font-size: 14px;
-      overflow-wrap: anywhere;
+    .footer-brand p {
+      max-width: 420px;
+      font-size: 0.84rem;
+      line-height: 1.78;
+      color: rgba(250, 250, 248, 0.52);
     }
-    .footer-section .credentials {
-      font-size: 12px;
-      opacity: 0.7;
-      font-style: italic;
+    .footer-heading {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 16px;
     }
-    .footer-section .note {
-      font-size: 12px;
-      color: #d4af37;
-      margin-top: 8px;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    a {
+      color: rgba(250, 250, 248, 0.54);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.25s;
+    }
+    a:hover {
+      color: var(--w);
     }
     .social-links {
       display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 10px 0;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
     }
-    .social-link {
+    .social-links a {
+      width: 38px;
+      height: 38px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
-      min-width: 36px;
-      height: 36px;
-      padding: 0 11px;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      border-radius: 999px;
-      color: #d4af37;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
+      border: 1px solid rgba(226, 177, 194, 0.3);
+      border-radius: 50%;
+      padding: 0;
+      color: var(--blush);
     }
-    .social-link svg {
-      width: 21px;
-      height: 21px;
+    .social-links svg {
+      width: 18px;
+      height: 18px;
+      display: block;
       fill: currentColor;
     }
-    .social-link:hover {
-      background: #d4af37;
-      color: #003366;
-      transform: translateY(-2px);
+    .social-links a:hover {
+      background: var(--magenta);
+      border-color: var(--magenta);
+      color: #fff;
     }
-    .footer-bottom {
-      text-align: center;
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
-      padding-top: 20px;
-      opacity: 0.8;
+    .footer-cta {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(220px, 0.7fr) minmax(260px, 0.9fr) minmax(220px, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid rgba(226, 177, 194, 0.22);
+      background: rgba(251, 250, 248, 0.045);
       min-width: 0;
     }
-    .footer-links {
-      margin-top: 10px;
+    .footer-cta .footer-heading {
+      margin: 0;
     }
-    .footer-links a {
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0 10px;
+    .footer-cta h3 {
+      color: var(--ink);
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      line-height: 1.08;
     }
-    .footer-links a:hover {
-      text-decoration: underline;
+    .footer-cta p:not(.footer-heading) {
+      color: rgba(250, 250, 248, 0.56);
+      font-size: 0.82rem;
+      line-height: 1.65;
+      margin: 0;
     }
-    @media (max-width: 640px) {
+    .footer-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(226, 177, 194, 0.42);
+      color: var(--ink);
+      white-space: normal;
+      text-align: center;
+    }
+    .footer-button:hover {
+      background: var(--magenta);
+      border-color: var(--magenta);
+      color: #fff;
+    }
+    .footer-note {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 14px 28px;
+      flex-wrap: wrap;
+      color: rgba(250, 250, 248, 0.38);
+      font-size: 0.76rem;
+      line-height: 1.6;
+      padding-top: 2px;
+    }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 28px;
+      padding-top: 22px;
+      font-size: 0.72rem;
+      color: rgba(250, 250, 248, 0.28);
+    }
+    .footer-bottom a {
+      font-size: inherit;
+      color: rgba(250, 250, 248, 0.44);
+    }
+    @media (max-width: 1024px) {
       .footer {
-        padding-left: 16px;
-        padding-right: 16px;
+        grid-template-columns: 1fr 1fr;
       }
-      .footer-content {
-        gap: 24px;
+      .footer-brand {
+        grid-column: 1 / -1;
       }
-      .footer-section {
-        text-align: center;
+      .footer-cta {
+        grid-template-columns: 1fr;
       }
-      .social-links {
-        justify-content: center;
+    }
+    @media (max-width: 700px) {
+      .footer {
+        grid-template-columns: 1fr;
+        padding: 48px 20px 28px;
+        gap: 34px;
       }
-      .footer-bottom p {
-        font-size: 13px;
-        line-height: 1.5;
+      .footer-brand {
+        grid-column: auto;
       }
-      .footer-links {
-        display: flex;
+      .footer-bottom {
         flex-direction: column;
-        gap: 8px;
-        align-items: center;
+        text-align: left;
       }
-      .footer-links a {
-        margin: 0;
-        padding: 4px 0;
+      .footer-cta {
+        padding: 22px 18px;
+      }
+      .social-links a {
+        width: 42px;
+        height: 42px;
       }
     }
   `]

@@ -140,7 +140,7 @@ import { Appointment } from '../../../models/appointment.model';
     .admin-container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: clamp(24px, 5vw, 40px) 20px;
+      padding: clamp(28px, 6vw, 64px) 20px 86px;
     }
     .login-section {
       display: flex;
@@ -151,7 +151,7 @@ import { Appointment } from '../../../models/appointment.model';
     .login-card {
       width: 100%;
       max-width: 400px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      box-shadow: var(--shadow);
       min-width: 0;
     }
     .login-card-header {
@@ -167,14 +167,14 @@ import { Appointment } from '../../../models/appointment.model';
       text-align: center;
     }
     .login-card h2 {
-      color: #4a90a4;
+      color: var(--char);
       margin: 0;
-      font-size: clamp(24px, 6vw, 30px);
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
       line-height: 1.15;
       overflow-wrap: anywhere;
     }
     .login-card p {
-      color: #7cb9d4;
+      color: var(--slate-m);
       margin: 0;
       font-size: clamp(14px, 3.5vw, 16px);
       line-height: 1.45;
@@ -206,10 +206,9 @@ import { Appointment } from '../../../models/appointment.model';
       align-items: center;
       gap: 16px;
       margin-bottom: 30px;
-      padding: 20px;
-      background: linear-gradient(135deg, #4a90a4 0%, #7cb9d4 100%);
-      color: white;
-      border-radius: 8px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--bdr);
+      color: var(--char);
       min-width: 0;
     }
     .dashboard-header h1 {
@@ -227,7 +226,8 @@ import { Appointment } from '../../../models/appointment.model';
     .table-container {
       background: white;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--bdr);
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -236,12 +236,12 @@ import { Appointment } from '../../../models/appointment.model';
       min-width: 900px;
     }
     .appointment-table th {
-      background: #f5f5f5;
+      background: var(--off);
       font-weight: 600;
-      color: #4a90a4;
+      color: var(--char);
     }
     .appointment-table tr:hover {
-      background: #f9f9f9;
+      background: rgba(139, 15, 85, 0.04);
     }
     .status-badge {
       padding: 6px 12px;

@@ -4,203 +4,193 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   template: `
-    <mat-toolbar color="primary" class="navbar">
-      <div class="brand-group">
+    <header class="navbar">
+      <nav class="nav-shell" aria-label="Primary navigation">
+        <div class="nav-left">
+          <button type="button" (click)="navigate('/services')">Services</button>
+          <button type="button" (click)="navigate('/about')">About</button>
+          <button type="button" (click)="navigate('/contact')">Contact</button>
+        </div>
+
         <button class="brand" type="button" aria-label="Go to home page" (click)="navigate('/home')">
-          <span class="brand-mark" aria-hidden="true">RN</span>
-          <span class="logo">Dr. Ruth Njoroge, MD</span>
+          Dr. Ruth <span>·</span> Njoroge
         </button>
-        <span class="subtitle">Plastic & Reconstructive Surgery</span>
-      </div>
-      <span class="spacer"></span>
-      <button
-        mat-icon-button
-        class="menu-toggle"
-        type="button"
-        aria-label="Toggle navigation menu"
-        [attr.aria-expanded]="menuOpen"
-        (click)="toggleMenu()">
-        <span class="hamburger-line" aria-hidden="true"></span>
-        <span class="hamburger-line" aria-hidden="true"></span>
-        <span class="hamburger-line" aria-hidden="true"></span>
-      </button>
-      <nav class="nav-links" [class.open]="menuOpen" aria-label="Primary navigation">
-        <button mat-button (click)="navigate('/home')">Home</button>
-        <button mat-button (click)="navigate('/about')">About</button>
-        <button mat-button (click)="navigate('/services')">Services</button>
-        <button mat-button (click)="navigate('/contact')">Contact</button>
-        <button mat-button (click)="navigate('/book-now')" color="accent">Schedule Consultation</button>
-        <button mat-button (click)="navigate('/admin/dashboard')">Admin</button>
+
+        <div class="nav-right">
+          <button class="admin-link" type="button" (click)="navigate('/admin/dashboard')">Admin</button>
+          <button class="book-link" type="button" (click)="navigate('/book-now')">Book Now</button>
+          <button
+            class="hamburger"
+            type="button"
+            aria-label="Toggle navigation menu"
+            [attr.aria-expanded]="menuOpen"
+            [class.open]="menuOpen"
+            (click)="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </nav>
-    </mat-toolbar>
+
+      <div class="mobile-menu" [class.open]="menuOpen">
+        <button type="button" (click)="navigate('/home')">Home</button>
+        <button type="button" (click)="navigate('/services')">Services</button>
+        <button type="button" (click)="navigate('/about')">About</button>
+        <button type="button" (click)="navigate('/contact')">Contact</button>
+        <button type="button" (click)="navigate('/admin/dashboard')">Admin</button>
+        <button class="mobile-book" type="button" (click)="navigate('/book-now')">Book Now</button>
+      </div>
+    </header>
   `,
   styles: [`
     .navbar {
-      background: linear-gradient(135deg, #003366 0%, #001a33 100%);
-      min-height: 72px;
-      padding: 10px 20px;
-      position: relative;
-      z-index: 10;
-      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
       width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(75, 23, 50, 0.08);
+      box-shadow: 0 10px 34px rgba(62, 36, 48, 0.04);
     }
-    .brand-group {
+    .nav-shell {
+      height: 70px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+      padding: 0 48px;
+    }
+    .nav-left,
+    .nav-right {
       display: flex;
       align-items: center;
+      gap: 24px;
       min-width: 0;
-      flex: 1 1 auto;
-      max-width: 520px;
     }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 8px 0 0;
-      padding: 0;
+    .nav-right {
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    button {
       border: 0;
       background: transparent;
+      color: rgba(75, 23, 50, 0.72);
       cursor: pointer;
-      color: inherit;
-      min-width: 0;
-      max-width: 100%;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      transition: color 0.25s, background 0.25s, transform 0.25s;
     }
-    .brand-mark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #d4af37;
-      color: #003366;
-      font-size: 13px;
-      font-weight: 800;
+    button:hover {
+      color: var(--plum);
+    }
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.34rem);
       letter-spacing: 0;
-      flex: 0 0 auto;
-    }
-    .logo {
-      font-size: 20px;
-      font-weight: 600;
-      color: #d4af37;
+      color: var(--plum);
+      text-align: center;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      text-transform: uppercase;
     }
-    .subtitle {
-      font-size: 12px;
-      font-weight: 400;
-      color: #ccc;
-      border-left: 2px solid #d4af37;
-      padding-left: 12px;
+    .brand span {
+      color: var(--magenta-l);
     }
-    .spacer {
-      flex: 1 1 auto;
-      min-width: 8px;
+    .book-link,
+    .mobile-book {
+      background: var(--plum);
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 4px;
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex: 0 1 auto;
-      min-width: 0;
+    .book-link:hover,
+    .mobile-book:hover {
+      background: var(--magenta);
+      color: #fff;
+      transform: translateY(-1px);
     }
-    .nav-links button {
-      margin: 0 8px;
-      color: white;
-      flex: 0 0 auto;
-      min-width: 0;
+    .admin-link {
+      color: rgba(75, 23, 50, 0.48);
     }
-    .nav-links button[color="accent"] {
-      background: #d4af37;
-      color: #003366;
-      font-weight: 600;
-    }
-    .menu-toggle {
+    .hamburger {
       display: none;
-      color: white;
-      align-items: center;
-      justify-content: center;
+      width: 34px;
+      height: 34px;
+      padding: 4px;
       flex-direction: column;
+      justify-content: center;
       gap: 5px;
-      width: 44px;
-      height: 44px;
     }
-    .hamburger-line {
+    .hamburger span {
       display: block;
-      width: 24px;
-      height: 2px;
-      border-radius: 2px;
-      background: #d4af37;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      background: var(--plum);
+      transition: transform 0.3s, opacity 0.3s;
     }
-    @media (max-width: 1180px) {
-      .subtitle {
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(4.5px, 4.5px);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(4.5px, -4.5px);
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 70px 0 auto;
+      min-height: calc(100svh - 70px);
+      background: rgba(255, 255, 255, 0.98);
+      z-index: 190;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      padding: 28px 20px;
+      border-bottom: 1px solid rgba(226, 177, 194, 0.18);
+    }
+    .mobile-menu button {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      color: var(--plum);
+      letter-spacing: 0;
+    }
+    .mobile-menu .mobile-book {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      padding: 14px 40px;
+    }
+    @media (max-width: 880px) {
+      .nav-shell {
+        grid-template-columns: 1fr auto;
+        padding: 0 20px;
+      }
+      .nav-left,
+      .admin-link,
+      .book-link {
         display: none;
       }
-      .nav-links button {
-        margin: 0 2px;
-        padding: 0 8px;
+      .brand {
+        justify-self: start;
       }
-    }
-    @media (max-width: 980px) {
-      .navbar {
-        min-height: 64px;
-        padding: 8px 12px;
-      }
-      .brand-group {
-        max-width: calc(100% - 56px);
-      }
-      .brand-mark {
-        width: 36px;
-        height: 36px;
-      }
-      .logo {
-        font-size: 16px;
-        white-space: normal;
-        line-height: 1.15;
-      }
-      .menu-toggle {
+      .hamburger {
         display: inline-flex;
       }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 8px 12px 14px;
-        background: #001a33;
-        box-shadow: 0 10px 18px rgba(0, 26, 51, 0.25);
-        max-height: calc(100vh - 64px);
-        overflow-y: auto;
-      }
-      .nav-links.open {
+      .mobile-menu.open {
         display: flex;
-      }
-      .nav-links button {
-        width: 100%;
-        margin: 2px 0;
-        justify-content: flex-start;
-        min-height: 44px;
-        flex: 0 0 auto;
-        text-align: left;
-      }
-      .nav-links button[color="accent"] {
-        justify-content: center;
-        margin-top: 8px;
       }
     }
     @media (max-width: 380px) {
-      .logo {
-        font-size: 13px;
-        overflow-wrap: anywhere;
+      .nav-shell {
+        padding: 0 16px;
       }
-      .brand-mark {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
+      .brand {
+        font-size: 0.98rem;
       }
     }
   `]

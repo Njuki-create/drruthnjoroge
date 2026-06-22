@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="policy-container">
       <div class="policy-header">
+        <p class="eyebrow">Legal</p>
         <h1>Terms of Service</h1> 
       </div>
 
@@ -99,19 +100,25 @@ import { Component } from '@angular/core';
     .policy-container {
       max-width: 900px;
       margin: 0 auto;
-      padding: clamp(24px, 5vw, 40px) 20px;
+      padding: clamp(28px, 6vw, 64px) 20px 86px;
       min-width: 0;
     }
     .policy-header {
       text-align: center;
       margin-bottom: clamp(32px, 6vw, 50px);
-      padding: clamp(30px, 6vw, 40px) 20px;
-      background: linear-gradient(135deg, #004d99 0%, #003366 100%);
-      color: white;
-      border-radius: 8px;
+      padding: clamp(42px, 8vw, 76px) 0;
+      border-bottom: 1px solid var(--bdr);
+    }
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--rose);
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
     .policy-header h1 {
-      font-size: clamp(30px, 6vw, 36px);
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
       margin-bottom: 10px;
       line-height: 1.1;
     }
@@ -121,18 +128,18 @@ import { Component } from '@angular/core';
     }
     .policy-content {
       line-height: 1.8;
-      color: #333;
+      color: var(--slate-m);
       min-width: 0;
     }
     section {
       margin-bottom: clamp(28px, 5vw, 40px);
     }
     h2 {
-      color: #004d99;
+      color: var(--char);
       font-size: clamp(21px, 4vw, 24px);
       margin-bottom: 15px;
       padding-bottom: 10px;
-      border-bottom: 2px solid #e0e0e0;
+      border-bottom: 1px solid var(--bdr);
       line-height: 1.25;
     }
     p {
