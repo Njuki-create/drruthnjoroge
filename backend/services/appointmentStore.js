@@ -8,7 +8,8 @@ const dataDir = path.join(__dirname, '..', 'data');
 const dataFile = path.join(dataDir, 'appointments.json');
 
 function shouldUseFileStore() {
-  return !process.env.NETLIFY && mongoose.connection.readyState !== 1;
+  const isProduction = process.env.NODE_ENV === 'production' || Boolean(process.env.VERCEL);
+  return !isProduction && mongoose.connection.readyState !== 1;
 }
 
 async function readAppointments() {

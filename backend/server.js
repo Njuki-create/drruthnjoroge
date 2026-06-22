@@ -16,7 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/drruthnjoroge';
-const forceFileStorage = !process.env.NETLIFY && process.env.USE_FILE_STORAGE === 'true';
+const isProduction = process.env.NODE_ENV === 'production' || Boolean(process.env.VERCEL);
+const forceFileStorage = !isProduction && process.env.USE_FILE_STORAGE === 'true';
 
 function describeMongoFailure(err) {
   if (err.code === 'ECONNREFUSED' && String(err.message).includes('mongodb._tcp')) {
@@ -84,7 +85,7 @@ function connectToDatabase() {
     return Promise.resolve(mongoose.connection);
   }
 
-  if (!process.env.NETLIFY && localDatabaseFallbackActive) {
+  if (!isProduction && localDatabaseFallbackActive) {
     return Promise.reject(new Error('Using local file-backed appointment storage'));
   }
 
@@ -92,8 +93,8 @@ function connectToDatabase() {
     return databaseConnectionPromise;
   }
 
-  if (process.env.NETLIFY && !process.env.MONGODB_URI) {
-    return Promise.reject(new Error('MONGODB_URI is required for Netlify appointment storage'));
+  if (isProduction && !process.env.MONGODB_URI) {
+    return Promise.reject(new Error('MONGODB_URI is required for production appointment storage'));
   }
 
   databaseConnectionPromise = mongoose.connect(mongoURI, {
@@ -107,7 +108,7 @@ function connectToDatabase() {
 }
 
 async function ensureDatabaseConnection(req, res, next) {
-  if (!process.env.NETLIFY && localDatabaseFallbackActive) {
+  if (!isProduction && localDatabaseFallbackActive) {
     return next();
   }
 
@@ -115,7 +116,7 @@ async function ensureDatabaseConnection(req, res, next) {
     await connectToDatabase();
     next();
   } catch (err) {
-    if (!process.env.NETLIFY) {
+    if (!isProduction) {
       activateLocalDatabaseFallback(err);
       return next();
     }
@@ -129,19 +130,22 @@ async function ensureDatabaseConnection(req, res, next) {
   }
 }
 
-if (!process.env.NETLIFY) {
-  if (forceFileStorage) {
-    activateConfiguredFileStorage();
-  } else {
-    connectToDatabase()
-      .then(() => {
-        console.log('MongoDB connected successfully');
-        console.log(`Database: ${mongoURI}`);
-      })
-      .catch(err => {
+if (forceFileStorage) {
+  activateConfiguredFileStorage();
+} else {
+  connectToDatabase()
+    .then(() => {
+      console.log('MongoDB connected successfully');
+      console.log(`Database: ${mongoURI}`);
+    })
+    .catch(err => {
+      if (!isProduction) {
         activateLocalDatabaseFallback(err);
-      });
-  }
+        return;
+      }
+
+      console.error('MongoDB connection failed:', err.message);
+    });
 }
 
 // API Routes

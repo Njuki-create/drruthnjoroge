@@ -354,7 +354,7 @@ After running both servers:
 - [ ] Enable HTTPS/SSL
 - [ ] Set NODE_ENV=production
 - [ ] Build frontend: `ng build --configuration production`
-- [ ] Deploy frontend (Vercel, Netlify)
+- [ ] Deploy frontend (Vercel)
 - [ ] Deploy backend (Heroku, AWS, DigitalOcean)
 - [ ] Set up database backups
 - [ ] Enable monitoring/logging

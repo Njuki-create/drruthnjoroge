@@ -342,7 +342,7 @@ The codebase is production-ready for:
 - ✅ Heroku (Backend)
 - ✅ AWS (EC2, Lambda)
 - ✅ DigitalOcean (Droplets)
-- ✅ Netlify (Frontend)
+- ✅ Vercel (Frontend)
 - ✅ Railway (Backend)
 - ✅ MongoDB Atlas (Database)
 
@@ -393,7 +393,7 @@ Update in footer component and contact page as needed.
 
 ### Medium Term (1-2 days)
 1. Deploy backend (Heroku, Railway, etc.)
-2. Deploy frontend (Vercel, Netlify)
+2. Deploy frontend (Vercel)
 3. Set up production MongoDB Atlas
 4. Update CORS settings
 5. Configure custom domain
