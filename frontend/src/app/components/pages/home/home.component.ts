@@ -15,6 +15,9 @@ import { Component } from '@angular/core';
         </div>
 
         <div class="hero-copy">
+          <div class="hero-logo-card rise r1" aria-label="Ruth Njoroge brand mark">
+            <img src="assets/images/logo2.jpg" alt="Ruth Njoroge Plastic, Reconstructive and Aesthetic Surgeon logo" loading="eager">
+          </div>
           <p class="kicker rise r1">Board-certified specialist care</p>
           <h1 class="rise r2">Dr. Ruth <em>Njoroge</em></h1>
           <p class="hero-p rise r3">
@@ -313,6 +316,20 @@ import { Component } from '@angular/core';
       align-self: center;
       max-width: 560px;
       padding-top: 54px;
+    }
+    .hero-logo-card {
+      width: min(300px, 68vw);
+      margin: 0 0 22px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(75, 23, 50, 0.08);
+      box-shadow: 0 16px 40px rgba(62, 36, 48, 0.08);
+    }
+    .hero-logo-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
     }
     .kicker,
     .sec-eye,
@@ -937,6 +954,10 @@ import { Component } from '@angular/core';
       .hero-copy {
         padding-top: 12px;
       }
+      .hero-logo-card {
+        width: min(280px, 70vw);
+        margin-bottom: 18px;
+      }
       .srow {
         grid-template-columns: 60px 1fr 28px;
       }
@@ -966,6 +987,11 @@ import { Component } from '@angular/core';
       .brand-line {
         top: 24px;
         left: 20px;
+      }
+      .hero-logo-card {
+        width: min(240px, 72vw);
+        padding: 8px 10px;
+        margin-bottom: 16px;
       }
       .portrait-wrap {
         max-width: 280px;
