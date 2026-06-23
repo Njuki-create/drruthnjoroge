@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
     <div class="contact-container">
       <div class="contact-header">
         <p class="eyebrow">Contact</p>
-        <h1>Visit or <em>Message</em> the Practice</h1>
-        <p>Reach the practice for appointments, private questions, consultation planning and follow-up guidance.</p>
+        <h1>Visit or <em>Message</em> Our Clinic</h1>
+        <p>Reach our clinic for appointments, private questions, consultation planning and follow-up guidance.</p>
       </div>
 
       <section class="contact-guidance">
@@ -28,7 +28,7 @@ import { Component } from '@angular/core';
           </article>
           <article>
             <span>03</span>
-            <h3>Call the practice</h3>
+            <h3>Call our clinic</h3>
             <p>Best for same-day questions, rescheduling or urgent administrative support during opening hours.</p>
           </article>
         </div>

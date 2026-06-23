@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       <div class="policy-content">
         <section>
           <h2>1. Our Commitment</h2>
-          <p>Dr. Ruth Njoroge, MD ("we", "our", or "the practice") respects your privacy. This Privacy Policy explains how we collect, use, protect, and share information when you visit our website, request information, contact us, or book a consultation for plastic, reconstructive, aesthetic, wellness, and related medical spa services.</p>
+          <p>Dr. Ruth Njoroge, MD ("we", "our", or "our clinic") respects your privacy. This Privacy Policy explains how we collect, use, protect, and share information when you visit our website, request information, contact us, or book a consultation for plastic, reconstructive, aesthetic, wellness, and related medical spa services.</p>
           <p>This policy is for website and appointment-request activity. Information shared during clinical care may also be handled under applicable medical confidentiality and health record requirements.</p>
         </section>
 
@@ -44,7 +44,7 @@ import { Component } from '@angular/core';
 
         <section>
           <h2>4. Sharing of Information</h2>
-          <p>We do not sell your personal information. We may share information only when needed to provide services, comply with the law, or protect patients and the practice.</p>
+          <p>We do not sell your personal information. We may share information only when needed to provide services, comply with the law, or protect patients and our clinic.</p>
           <ul>
             <li>With authorized clinical, administrative, or scheduling team members.</li>
             <li>With service providers who help operate our website, appointment systems, communications, or records.</li>

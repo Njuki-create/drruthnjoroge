@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="about-container">
       <div class="page-hero">
-        <p class="eyebrow">About The Practice</p>
+        <p class="eyebrow">About Our Clinic</p>
         <h1>Dr. Ruth <em>Njoroge</em>, MD</h1>
         <p>MBChB(UoN), MMed PRAS(UoN)</p>
       </div>
@@ -50,17 +50,17 @@ import { Component } from '@angular/core';
             than presented as one-size-fits-all packages.
           </p>
           <p>
-            The practice emphasizes clear communication before and after treatment, natural-looking outcomes, and surgical
+            Our clinic emphasizes clear communication before and after treatment, natural-looking outcomes, and surgical
             decision-making guided by function, proportion, confidence, and long-term wellbeing.
           </p>
         </div>
 
         <div class="authority-section">
           <div class="authority-copy">
-            <p class="section-eye">Why Patients Choose The Practice</p>
+            <p class="section-eye">Why Patients Choose Our Clinic</p>
             <h2>Specialist training, aesthetic restraint and a deeply human consultation style.</h2>
             <p>
-              Patients come to the practice for more than a procedure. They come for careful assessment, privacy,
+              Patients come to our clinic for more than a procedure. They come for careful assessment, privacy,
               honest guidance and the reassurance of a specialist who understands both reconstruction and aesthetic
               proportion.
             </p>
@@ -108,7 +108,7 @@ import { Component } from '@angular/core';
             <article>
               <span>02</span>
               <h3>Respect for privacy</h3>
-              <p>The practice is designed for discreet conversations, confidential planning and supportive follow-up.</p>
+              <p>Our clinic is designed for discreet conversations, confidential planning and supportive follow-up.</p>
             </article>
             <article>
               <span>03</span>

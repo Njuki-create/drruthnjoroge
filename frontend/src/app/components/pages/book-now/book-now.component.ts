@@ -152,7 +152,7 @@ import { AppointmentService } from '../../../services/appointment.service';
         <article>
           <span>03</span>
           <h3>Next-step guidance</h3>
-          <p>The practice will advise what to prepare, whether follow-up is needed and how to proceed safely.</p>
+          <p>Our clinic will advise what to prepare, whether follow-up is needed and how to proceed safely.</p>
         </article>
       </section>
 
@@ -517,7 +517,7 @@ export class BookNowComponent implements OnInit {
   isSubmitting = false;
 
   afterSubmitSteps = [
-    { no: '01', title: 'Request review', text: 'The practice reviews your selected service, preferred date and notes so the follow-up can be relevant.' },
+    { no: '01', title: 'Request review', text: 'Our clinic reviews your selected service, preferred date and notes so the follow-up can be relevant.' },
     { no: '02', title: 'Confirmation contact', text: 'You will be contacted to confirm availability, timing and any details needed before the visit.' },
     { no: '03', title: 'Consultation preparation', text: 'You may be advised to bring medical documents, previous procedure records or images where useful.' },
     { no: '04', title: 'Private consultation', text: 'Your goals, suitability, risks, alternatives and recovery expectations are discussed before any plan is made.' }

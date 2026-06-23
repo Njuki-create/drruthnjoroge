@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
           <h2>Every treatment category begins with a medical conversation, not a sales pitch.</h2>
         </div>
         <p>
-          The practice supports patients who are exploring subtle refinement, post-pregnancy body change,
+          Our clinic supports patients who are exploring subtle refinement, post-pregnancy body change,
           post-weight-loss concerns, scar improvement, reconstruction after injury or illness, and long-standing
           aesthetic goals. Your consultation clarifies which options are suitable, what recovery may require and
           what result can be pursued responsibly.
@@ -204,7 +204,7 @@ import { Component } from '@angular/core';
         <p class="eyebrow">Specialist Care In Mombasa</p>
         <h2>Plastic, reconstructive and aesthetic surgery for patients seeking informed, private care.</h2>
         <p>
-          Patients visit the practice for breast surgery, body contouring, tummy tuck planning, liposuction,
+          Patients visit our clinic for breast surgery, body contouring, tummy tuck planning, liposuction,
           reconstructive surgery, burn and trauma reconstruction, keloid treatment, scar revision, chronic wound
           care, Botox, dermal fillers, PRP therapy and hair restoration in Mombasa. Every service begins with a
           consultation so the plan is grounded in safety, anatomy, recovery and realistic expectations.
@@ -757,7 +757,7 @@ export class ServicesComponent {
   ];
 
   concerns = [
-    { question: 'Will I still look like myself?', answer: 'The practice prioritizes proportion, restraint and anatomy-led planning so enhancement supports your own features rather than replacing them.' },
+    { question: 'Will I still look like myself?', answer: 'Our clinic prioritizes proportion, restraint and anatomy-led planning so enhancement supports your own features rather than replacing them.' },
     { question: 'How visible will scars be?', answer: 'Scarring depends on the procedure, skin type, healing history and aftercare. Scar placement, maturation and care are discussed before treatment.' },
     { question: 'How long is recovery?', answer: 'Recovery varies widely. Your consultation covers downtime, activity limits, follow-up and practical planning for work, family and travel.' },
     { question: 'What if surgery is not right for me?', answer: 'A responsible recommendation may include non-surgical care, waiting, medical optimization or choosing not to proceed.' }
@@ -767,6 +767,6 @@ export class ServicesComponent {
     { q: 'Do I need to know exactly which procedure I want?', a: 'No. You can book with a concern or goal, and the consultation will clarify which options fit safely.' },
     { q: 'Can I discuss more than one concern?', a: 'Yes. Many patients discuss related concerns together, especially breast and body changes or scars and skin quality.' },
     { q: 'Are results guaranteed?', a: 'No medical or aesthetic result can be guaranteed. The consultation focuses on realistic expectations and individualized planning.' },
-    { q: 'Is my enquiry private?', a: 'Yes. Appointment requests and consultations are handled discreetly by the practice team.' }
+    { q: 'Is my enquiry private?', a: 'Yes. Appointment requests and consultations are handled discreetly by our clinic team.' }
   ];
 }

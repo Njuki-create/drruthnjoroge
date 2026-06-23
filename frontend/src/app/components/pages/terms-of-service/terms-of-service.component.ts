@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
       <div class="policy-content">
         <section>
           <h2>1. Agreement to Terms</h2>
-          <p>By accessing this website, contacting the practice, or submitting an appointment request, you agree to these Terms of Service. If you do not agree with these terms, please do not use the website.</p>
+          <p>By accessing this website, contacting our clinic, or submitting an appointment request, you agree to these Terms of Service. If you do not agree with these terms, please do not use the website.</p>
         </section>
 
         <section>
@@ -24,12 +24,12 @@ import { Component } from '@angular/core';
         <section>
           <h2>3. Consultations and Eligibility</h2>
           <p>Services are provided only after appropriate consultation, assessment, informed consent, and clinical suitability review. Dr. Ruth Njoroge may decline, postpone, or modify a requested service when it is not medically appropriate, safe, or aligned with professional standards.</p>
-          <p>Before receiving any procedure, you are responsible for providing complete and accurate information about your medical history, medications, allergies, previous procedures, expectations, and any other information requested by the practice.</p>
+          <p>Before receiving any procedure, you are responsible for providing complete and accurate information about your medical history, medications, allergies, previous procedures, expectations, and any other information requested by our clinic.</p>
         </section>
 
         <section>
           <h2>4. Appointment Requests</h2>
-          <p>Submitting a booking request through the website does not guarantee an appointment until the practice confirms it. Appointment times, service availability, clinician availability, and consultation requirements may change.</p>
+          <p>Submitting a booking request through the website does not guarantee an appointment until our clinic confirms it. Appointment times, service availability, clinician availability, and consultation requirements may change.</p>
           <ul>
             <li>Please provide accurate contact and scheduling information.</li>
             <li>Please arrive on time for confirmed appointments.</li>
@@ -40,7 +40,7 @@ import { Component } from '@angular/core';
 
         <section>
           <h2>5. Cancellations and Rescheduling</h2>
-          <p>We ask that cancellations or rescheduling requests be made at least 24 hours before the appointment time whenever possible. Late cancellations, missed appointments, or repeated rescheduling may affect future booking availability and may be subject to applicable fees if communicated by the practice.</p>
+          <p>We ask that cancellations or rescheduling requests be made at least 24 hours before the appointment time whenever possible. Late cancellations, missed appointments, or repeated rescheduling may affect future booking availability and may be subject to applicable fees if communicated by our clinic.</p>
         </section>
 
         <section>
@@ -71,7 +71,7 @@ import { Component } from '@angular/core';
 
         <section>
           <h2>10. Limitation of Liability</h2>
-          <p>To the fullest extent permitted by applicable law, Dr. Ruth Njoroge and the practice are not liable for damages arising from your use of, or inability to use, this website or from reliance on website content. Nothing in these terms limits liability that cannot be limited under applicable law.</p>
+          <p>To the fullest extent permitted by applicable law, Dr. Ruth Njoroge and our clinic are not liable for damages arising from your use of, or inability to use, this website or from reliance on website content. Nothing in these terms limits liability that cannot be limited under applicable law.</p>
         </section>
 
         <section>

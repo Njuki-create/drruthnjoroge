@@ -54,7 +54,7 @@ import { Component } from '@angular/core';
       <div class="footer-cta">
         <p class="footer-heading">Consultation</p>
         <h3>Private specialist guidance before any decision.</h3>
-        <p>Start with a confidential appointment request. The practice will help clarify suitability, preparation and next steps.</p>
+        <p>Start with a confidential appointment request. Our clinic will help clarify suitability, preparation and next steps.</p>
         <a class="footer-button" routerLink="/book-now">Book Consultation</a>
       </div>
 

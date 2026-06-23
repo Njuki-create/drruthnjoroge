@@ -57,7 +57,7 @@ import { Component } from '@angular/core';
         <p class="sec-eye">Signature Focus</p>
         <h2 class="sec-t">Subtle transformation, specialist judgement.</h2>
         <p>
-          The practice brings together reconstructive discipline and aesthetic refinement for patients who want their
+          Our clinic brings together reconstructive discipline and aesthetic refinement for patients who want their
           treatment to feel considered, private and medically grounded.
         </p>
       </div>
@@ -140,7 +140,7 @@ import { Component } from '@angular/core';
         <h2>For patients seeking thoughtful, specialist-led change.</h2>
         <p>
           Whether you are considering surgery for confidence, restoration, comfort, function, or a long-standing concern,
-          the practice helps you move from uncertainty to a clear, medically sound plan.
+          Our clinic helps you move from uncertainty to a clear, medically sound plan.
         </p>
       </div>
       <div class="fit-grid">
@@ -180,7 +180,7 @@ import { Component } from '@angular/core';
         <p class="sec-eye">Patient Experience</p>
         <h2 class="sec-t">A premium clinic experience should feel clear before it feels clinical.</h2>
         <p>
-          The practice is designed for patients who want privacy, thoughtful answers and a plan that respects both
+          Our clinic is designed for patients who want privacy, thoughtful answers and a plan that respects both
           confidence and health.
         </p>
       </div>
@@ -210,7 +210,7 @@ import { Component } from '@angular/core';
       <div class="cta-inner">
         <p class="sec-eye">Start Your Journey</p>
         <h2 class="sec-t">Ready to <em>talk?</em></h2>
-        <p>Share your goals with the practice and receive clear next steps for consultation, planning and care. Private consultation first; no obligation to proceed.</p>
+        <p>Share your goals with our clinic and receive clear next steps for consultation, planning and care. Private consultation first; no obligation to proceed.</p>
         <div class="cta-btns">
           <button class="btn-light dark" type="button" routerLink="/book-now">Book Appointment</button>
           <button class="btn-ghost dark" type="button" routerLink="/contact">Contact Practice</button>
@@ -1079,7 +1079,7 @@ export class HomeComponent {
   homeFaqs = [
     { q: 'Can I come in just to ask questions?', a: 'Yes. A consultation can be purely exploratory and does not oblige you to proceed with treatment.' },
     { q: 'Do I need to know the exact procedure?', a: 'No. You can describe your concern and receive guidance on suitable surgical or non-surgical options.' },
-    { q: 'Will my consultation be private?', a: 'Yes. Sensitive aesthetic and reconstructive concerns are handled discreetly by the practice.' },
+    { q: 'Will my consultation be private?', a: 'Yes. Sensitive aesthetic and reconstructive concerns are handled discreetly by our clinic.' },
     { q: 'Can non-surgical options be discussed?', a: 'Yes. If surgery is not suitable or not desired, alternatives can be reviewed during consultation.' }
   ];
 }

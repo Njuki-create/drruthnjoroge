@@ -149,7 +149,13 @@ if (forceFileStorage) {
 }
 
 // API Routes
-app.use('/api', ensureDatabaseConnection);
+app.use('/api', (req, res, next) => {
+  if (req.path === '/admin/login') {
+    return next();
+  }
+
+  return ensureDatabaseConnection(req, res, next);
+});
 app.use('/api/appointments', require('./routes/appointments'));
 app.use('/api/admin', require('./routes/admin'));
 
