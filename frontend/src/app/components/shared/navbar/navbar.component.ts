@@ -34,12 +34,41 @@ import { Router } from '@angular/router';
       </nav>
 
       <div class="mobile-menu" [class.open]="menuOpen">
-        <button type="button" (click)="navigate('/home')">Home</button>
-        <button type="button" (click)="navigate('/services')">Services</button>
-        <button type="button" (click)="navigate('/about')">About</button>
-        <button type="button" (click)="navigate('/contact')">Contact</button>
-        <button type="button" (click)="navigate('/admin/dashboard')">Admin</button>
-        <button class="mobile-book" type="button" (click)="navigate('/book-now')">Book Now</button>
+        <div class="mobile-panel">
+          <div class="mobile-panel-head">
+            <span>Dr. Ruth Njoroge</span>
+            <p>Plastic, reconstructive and aesthetic care in Mombasa.</p>
+          </div>
+
+          <div class="mobile-links">
+            <button type="button" (click)="navigate('/home')">
+              <span>01</span>
+              Home
+            </button>
+            <button type="button" (click)="navigate('/services')">
+              <span>02</span>
+              Services
+            </button>
+            <button type="button" (click)="navigate('/about')">
+              <span>03</span>
+              About
+            </button>
+            <button type="button" (click)="navigate('/contact')">
+              <span>04</span>
+              Contact
+            </button>
+            <button type="button" (click)="navigate('/admin/dashboard')">
+              <span>05</span>
+              Admin
+            </button>
+          </div>
+
+          <button class="mobile-book" type="button" (click)="navigate('/book-now')">Book Consultation</button>
+
+          <div class="mobile-panel-note">
+            Private consultation first. Clear next steps before any decision.
+          </div>
+        </div>
       </div>
     </header>
   `,
@@ -144,26 +173,80 @@ import { Router } from '@angular/router';
       position: fixed;
       inset: 70px 0 auto;
       min-height: calc(100svh - 70px);
-      background: rgba(255, 255, 255, 0.98);
+      background:
+        linear-gradient(135deg, rgba(139, 15, 85, 0.08), transparent 36rem),
+        rgba(255, 255, 255, 0.98);
       z-index: 190;
+      padding: 22px 20px 28px;
+      border-bottom: 1px solid rgba(226, 177, 194, 0.18);
+      overflow-y: auto;
+    }
+    .mobile-panel {
+      width: min(100%, 460px);
+      margin: 0 auto;
+      min-height: calc(100svh - 120px);
+      display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      gap: 28px;
-      padding: 28px 20px;
-      border-bottom: 1px solid rgba(226, 177, 194, 0.18);
+      gap: 24px;
     }
-    .mobile-menu button {
+    .mobile-panel-head {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(75, 23, 50, 0.1);
+    }
+    .mobile-panel-head span {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.1rem;
+      display: block;
+      font-size: clamp(2rem, 12vw, 3.1rem);
+      line-height: 0.95;
       color: var(--plum);
       letter-spacing: 0;
+    }
+    .mobile-panel-head p {
+      margin-top: 10px;
+      color: var(--slate-m);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(75, 23, 50, 0.08);
+    }
+    .mobile-links button {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid rgba(75, 23, 50, 0.08);
+      color: var(--plum);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.55rem, 7vw, 2.05rem);
+      letter-spacing: 0;
+      text-align: left;
+    }
+    .mobile-links button span {
+      width: 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      color: var(--magenta);
     }
     .mobile-menu .mobile-book {
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
       letter-spacing: 0.04em;
-      padding: 14px 40px;
+      min-height: 48px;
+      width: 100%;
+      padding: 14px 24px;
+      margin-top: 2px;
+    }
+    .mobile-panel-note {
+      color: var(--slate-m);
+      font-size: 0.74rem;
+      line-height: 1.65;
+      text-align: center;
+      padding: 0 12px;
     }
     @media (max-width: 880px) {
       .nav-shell {
@@ -187,10 +270,16 @@ import { Router } from '@angular/router';
     }
     @media (max-width: 380px) {
       .nav-shell {
-        padding: 0 16px;
+        padding: 0 14px;
       }
       .brand {
-        font-size: 0.98rem;
+        font-size: 0.9rem;
+      }
+      .hamburger {
+        width: 32px;
+      }
+      .mobile-menu {
+        padding-inline: 16px;
       }
     }
   `]

@@ -21,8 +21,9 @@ import { Component } from '@angular/core';
           <p class="kicker rise r1">Board-certified specialist care</p>
           <h1 class="rise r2">Dr. Ruth <em>Njoroge</em></h1>
           <p class="hero-p rise r3">
-            A consultation-led practice for plastic, reconstructive and aesthetic surgery in Mombasa.
-            Planning is private, measured and grounded in safety, proportion and clear recovery guidance.
+            Specialist plastic, reconstructive and aesthetic care in Mombasa, planned around your goals,
+            anatomy and wellbeing. Every journey begins with a private consultation, clear guidance and a
+            treatment plan shaped with safety, proportion and confidence in mind.
           </p>
           <div class="hero-btns rise r4">
             <button class="btn-light" type="button" routerLink="/book-now">Book a Consultation</button>
